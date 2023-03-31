@@ -1,0 +1,130 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "D$:\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"D$:\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "D$:\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"D$:\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = "D$:\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"D$:\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = "D$:\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"D$:\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Desktop\APM32_SPI_DMA\Core\Src\apm32f4xx_int.c -xcl_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.xcl -macro_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.tmp -icc_path "D$:\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Desktop\APM32_SPI_DMA\Core\Src\apm32f4xx_int.c -D APM32F40X -o D$:\Desktop\APM32_SPI_DMA\EWARM\Release\Obj\Application\Core --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\Desktop\APM32_SPI_DMA\EWARM/../Core/Inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\APM32F4xx_StdPeriphDriver\inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\Device\Geehy\APM32F4xx\Include\ -On -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --predef_macros D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.tmp
+  rspfile_name = D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.xcl.rsp
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Desktop\APM32_SPI_DMA\Core\Src\main.c -xcl_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.xcl -macro_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.tmp -icc_path "D$:\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Desktop\APM32_SPI_DMA\Core\Src\main.c -D APM32F40X -o D$:\Desktop\APM32_SPI_DMA\EWARM\Release\Obj\Application\Core --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\Desktop\APM32_SPI_DMA\EWARM/../Core/Inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\APM32F4xx_StdPeriphDriver\inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\Device\Geehy\APM32F4xx\Include\ -On -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --predef_macros D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.tmp
+  rspfile_name = D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.xcl.rsp
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.c -xcl_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.xcl -macro_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.tmp -icc_path "D$:\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.c -D APM32F40X -o D$:\Desktop\APM32_SPI_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\Desktop\APM32_SPI_DMA\EWARM/../Core/Inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\APM32F4xx_StdPeriphDriver\inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\Device\Geehy\APM32F4xx\Include\ -On -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --predef_macros D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.tmp
+  rspfile_name = D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.xcl.rsp
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.c -xcl_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.xcl -macro_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.tmp -icc_path "D$:\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.c -D APM32F40X -o D$:\Desktop\APM32_SPI_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\Desktop\APM32_SPI_DMA\EWARM/../Core/Inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\APM32F4xx_StdPeriphDriver\inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\Device\Geehy\APM32F4xx\Include\ -On -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --predef_macros D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.tmp
+  rspfile_name = D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.xcl.rsp
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.c -xcl_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.xcl -macro_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.tmp -icc_path "D$:\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.c -D APM32F40X -o D$:\Desktop\APM32_SPI_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\Desktop\APM32_SPI_DMA\EWARM/../Core/Inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\APM32F4xx_StdPeriphDriver\inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\Device\Geehy\APM32F4xx\Include\ -On -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --predef_macros D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.tmp
+  rspfile_name = D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.xcl.rsp
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.c -xcl_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.xcl -macro_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.tmp -icc_path "D$:\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.c -D APM32F40X -o D$:\Desktop\APM32_SPI_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\Desktop\APM32_SPI_DMA\EWARM/../Core/Inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\APM32F4xx_StdPeriphDriver\inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\Device\Geehy\APM32F4xx\Include\ -On -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --predef_macros D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.tmp
+  rspfile_name = D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.xcl.rsp
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.c -xcl_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.xcl -macro_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.tmp -icc_path "D$:\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.c -D APM32F40X -o D$:\Desktop\APM32_SPI_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\Desktop\APM32_SPI_DMA\EWARM/../Core/Inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\APM32F4xx_StdPeriphDriver\inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\Device\Geehy\APM32F4xx\Include\ -On -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --predef_macros D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.tmp
+  rspfile_name = D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.xcl.rsp
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.c -xcl_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.xcl -macro_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.tmp -icc_path "D$:\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.c -D APM32F40X -o D$:\Desktop\APM32_SPI_DMA\EWARM\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\Desktop\APM32_SPI_DMA\EWARM/../Core/Inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\APM32F4xx_StdPeriphDriver\inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\Device\Geehy\APM32F4xx\Include\ -On -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --predef_macros D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.tmp
+  rspfile_name = D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.xcl.rsp
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Desktop\APM32_SPI_DMA\Drivers\Device\Geehy\APM32F4xx\Source\system_apm32f4xx.c -xcl_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.xcl -macro_file D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.tmp -icc_path "D$:\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\Desktop\APM32_SPI_DMA\Drivers\Device\Geehy\APM32F4xx\Source\system_apm32f4xx.c -D APM32F40X -o D$:\Desktop\APM32_SPI_DMA\EWARM\Release\Obj\Drivers\CMSIS --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I D$:\Desktop\APM32_SPI_DMA\EWARM/../Core/Inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\APM32F4xx_StdPeriphDriver\inc\ -I D$:\Desktop\APM32_SPI_DMA\EWARM\..\Drivers\Device\Geehy\APM32F4xx\Include\ -On -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -I "D$:\Embedded$ Workbench$ 9.1\arm\CMSIS\DSP\Include\\" -D ARM_MATH_CM4 --predef_macros D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.tmp
+  rspfile_name = D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.xcl.rsp
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.pbi : INDEXER D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.xcl |  $
+D$:\Desktop\APM32_SPI_DMA\Core\Src\apm32f4xx_int.c
+  flags = -out=D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.pbi -f D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.xcl
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.pbi : INDEXER D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.xcl |  $
+D$:\Desktop\APM32_SPI_DMA\Core\Src\main.c
+  flags = -out=D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.pbi -f D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.xcl
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.pbi : INDEXER D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.xcl |  $
+D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.c
+  flags = -out=D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.pbi -f D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.xcl
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.pbi : INDEXER D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.xcl |  $
+D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.c
+  flags = -out=D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.pbi -f D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.xcl
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.pbi : INDEXER D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.xcl |  $
+D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.c
+  flags = -out=D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.pbi -f D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.xcl
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.pbi : INDEXER D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.xcl |  $
+D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.c
+  flags = -out=D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.pbi -f D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.xcl
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.pbi : INDEXER D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.xcl |  $
+D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.c
+  flags = -out=D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.pbi -f D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.xcl
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.pbi : INDEXER D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.xcl |  $
+D$:\Desktop\APM32_SPI_DMA\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.c
+  flags = -out=D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.pbi -f D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.xcl
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.pbi : INDEXER D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.xcl |  $
+D$:\Desktop\APM32_SPI_DMA\Drivers\Device\Geehy\APM32F4xx\Source\system_apm32f4xx.c
+  flags = -out=D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.pbi -f D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.xcl
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot.pbw : MAKEBROWSE D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot.pbd
+  flags = D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot.pbd -output D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot.pbw
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part0.pbi : PDBLINK D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.pbi |  $
+D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.pbi $
+D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.pbi
+  flags = -M D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part0.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\apm32f4xx_int.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Application\Core\main.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.pbi
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part1.pbi : PDBLINK D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.pbi |  $
+D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.pbi $
+D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.pbi
+  flags = -M D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part1.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.pbi
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part2.pbi : PDBLINK D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.pbi |  $
+D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.pbi $
+D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.pbi
+  flags = -M D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part2.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Drivers\CMSIS\system_apm32f4xx.pbi
+
+build D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot.pbd : PDBLINK D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part0.pbi |  $
+D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part1.pbi $
+D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part2.pbi
+  flags = -M D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot.pbd D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part0.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part1.pbi D$:\Desktop\APM32_SPI_DMA\EWARM\Release\BrowseInfo\Boot_part2.pbi
+

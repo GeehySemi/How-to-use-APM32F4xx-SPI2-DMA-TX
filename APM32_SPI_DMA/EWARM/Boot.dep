@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>3296445902</fileChecksum>
+    <configuration>
+        <name>Release</name>
+        <outputs>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\inc\apm32f4xx_rcm.h</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\inc\apm32f4xx_syscfg.h</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.c</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.c</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.c</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.c</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\inc\apm32f4xx_gpio.h</file>
+            <file>$PROJ_DIR$\Release\Exe\Boot.out</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\inc\apm32f4xx_misc.h</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\inc\apm32f4xx_dma.h</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.c</file>
+            <file>$PROJ_DIR$\..\Drivers\Device\Geehy\APM32F4xx\Source\system_apm32f4xx.c</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.c</file>
+            <file>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\inc\apm32f4xx_spi.h</file>
+            <file>$PROJ_DIR$\..\Core\Src\apm32f4xx_int.c</file>
+            <file>$PROJ_DIR$\..\Core\Src\main.c</file>
+            <file>$PROJ_DIR$\..\Drivers\Device\Geehy\APM32F4xx\Source\iar\startup_apm32f40x.s</file>
+            <file>$PROJ_DIR$\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.o</file>
+            <file>$PROJ_DIR$\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\..\Drivers\Device\Geehy\APM32F4xx\Include\system_apm32f4xx.h</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\..\Core\Inc\main.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Lib\IAR\iar_cortexM4lf_math.a</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.o</file>
+            <file>$PROJ_DIR$\Release\List\Boot.map</file>
+            <file>$PROJ_DIR$\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.o</file>
+            <file>$PROJ_DIR$\..\Drivers\Device\Geehy\APM32F4xx\Include\apm32f4xx.h</file>
+            <file>$PROJ_DIR$\Release\Obj\Drivers\CMSIS\system_apm32f4xx.o</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\mpu_armv7.h</file>
+            <file>$PROJ_DIR$\..\Core\Inc\apm32f4xx_int.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\Release\Obj\Application\Core\main.o</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_version.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Boot.icf</file>
+            <file>$PROJ_DIR$\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.o</file>
+            <file>$PROJ_DIR$\Release\Obj\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.o</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\core_cm4.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\Release\Exe\Boot.bin</file>
+            <file>$PROJ_DIR$\Release\Obj\Application\EWARM\startup_apm32f40x.o</file>
+            <file>$PROJ_DIR$\Release\Obj\Application\Core\apm32f4xx_int.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iccarm_builtin.h</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_syscfg.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 1 34 45 4 23 25 20 26 41 40 46 30 50 36 21 0</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_misc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 9 34 45 4 23 25 20 26 41 40 46 30 50 36 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_dma.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10 34 45 4 23 25 20 26 41 40 46 30 50 36 21 0</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_rcm.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 31</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 0 34 45 4 23 25 20 26 41 40 46 30 50 36 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Release\Exe\Boot.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 32</file>
+                </tool>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 47</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 42 19 18 49 44 31 43 33 39 48 35 27 28 29 22 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 43</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 14 34 45 4 23 25 20 26 41 40 46 30 50 36 21 0</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\Device\Geehy\APM32F4xx\Source\system_apm32f4xx.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 35</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 34 45 4 23 25 20 26 41 40 46 30 50 36 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\APM32F4xx_StdPeriphDriver\src\apm32f4xx_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 18</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 7 34 45 4 23 25 20 26 41 40 46 30 50 36 21 0</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Core\Src\apm32f4xx_int.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 49</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 24 34 45 4 23 25 20 26 41 40 46 30 50 36 21 0 9 7 14 10 37</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Core\Src\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 39</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 24 34 45 4 23 25 20 26 41 40 46 30 50 36 21 0 9 7 14 10</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Drivers\Device\Geehy\APM32F4xx\Source\iar\startup_apm32f40x.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 48</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 8 32</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Release\Exe\Boot.bin</name>
+            <inputs>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 8</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

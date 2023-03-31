@@ -1,0 +1,15 @@
+"D:\Embedded Workbench 9.1\arm\bin\armPROC.dll" 
+
+"D:\Embedded Workbench 9.1\arm\bin\armJLINK.dll" 
+
+"D:\Desktop\APM32_SPI_DMA\EWARM\Release\Exe\Boot.out" 
+
+--plugin="D:\Embedded Workbench 9.1\arm\bin\armbat.dll" 
+
+--device_macro="D:\Embedded Workbench 9.1\arm/config/debugger/Geehy/APM32F4xx.dmac" 
+
+--flash_loader="D:\Embedded Workbench 9.1\arm/config/flashloader/Geehy/FlashAPM32F4xxG.board" 
+
+
+
+
